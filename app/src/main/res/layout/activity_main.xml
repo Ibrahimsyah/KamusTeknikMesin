@@ -77,12 +77,12 @@
             android:id="@+id/menu1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/search"
+            android:layout_above="@id/menu2"
             android:layout_marginLeft="30dp"
-            android:layout_marginTop="200dp"
             android:layout_marginRight="30dp"
+            android:layout_marginBottom="50dp"
             app:cardBackgroundColor="@color/colorPrimary"
-            app:cardCornerRadius="50dp">
+            app:cardCornerRadius="10dp">
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -115,12 +115,12 @@
             android:id="@+id/menu2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/menu1"
+            android:layout_alignParentBottom="true"
             android:layout_marginLeft="30dp"
-            android:layout_marginTop="50dp"
             android:layout_marginRight="30dp"
+            android:layout_marginBottom="50dp"
             app:cardBackgroundColor="@color/colorPrimary"
-            app:cardCornerRadius="50dp">
+            app:cardCornerRadius="10dp">
 
             <RelativeLayout
                 android:layout_width="match_parent"
