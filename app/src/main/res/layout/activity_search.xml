@@ -8,17 +8,20 @@
     tools:context=".SearchActivity">
 
     <androidx.appcompat.widget.Toolbar
+        android:id="@+id/searchToolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="?attr/colorPrimary"
-        android:theme="?attr/actionBarTheme"
-        android:minHeight="?attr/actionBarSize" android:id="@+id/searchToolbar">
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme">
 
         <androidx.appcompat.widget.SearchView
             android:id="@+id/searchView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_gravity="center_horizontal"
+            android:theme="@style/AlertDialog.AppCompat.Light"
+            app:closeIcon="@android:drawable/ic_menu_close_clear_cancel"
             app:iconifiedByDefault="false"
             app:queryHint="Cari Sesuatu"
             app:searchIcon="@null">

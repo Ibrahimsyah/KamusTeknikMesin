@@ -33,7 +33,7 @@ class MainActivity : AppCompatActivity() {
             toast("Menu2 Di Klik")
         }
         search.onClick {
-            startActivity<SearchActivity>();
+            startActivity<SearchActivity>()
         }
         val ref = FirebaseDatabase.getInstance().getReference("kategori")
         ref.addValueEventListener(object : ValueEventListener {
