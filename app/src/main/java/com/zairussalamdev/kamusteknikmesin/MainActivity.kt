@@ -27,7 +27,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         menu1.onClick {
-            toast("Menu1 Di Klik")
+            startActivity<KategoriActivity>()
         }
         menu2.onClick {
             toast("Menu2 Di Klik")
