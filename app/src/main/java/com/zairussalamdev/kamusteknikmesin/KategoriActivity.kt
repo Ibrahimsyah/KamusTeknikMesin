@@ -10,6 +10,8 @@ import com.google.firebase.database.ValueEventListener
 import com.zairussalamdev.kamusteknikmesin.adapter.KategoriAdapter
 import com.zairussalamdev.kamusteknikmesin.model.Kategori
 import kotlinx.android.synthetic.main.activity_kategori.*
+import org.jetbrains.anko.startActivity
+import org.jetbrains.anko.toast
 
 class KategoriActivity : AppCompatActivity() {
 
@@ -32,6 +34,9 @@ class KategoriActivity : AppCompatActivity() {
         })
         rvKategori.layoutManager = LinearLayoutManager(this)
         rvKategori.setHasFixedSize(true)
-        rvKategori.adapter = KategoriAdapter(this, items){}
+        rvKategori.adapter = KategoriAdapter(this, items){
+            toast(it.name)
+            startActivity<MateriActivity>("id_kategori" to it.id_kategori)
+        }
     }
 }

@@ -34,7 +34,7 @@ class KategoriAdapter(
             val drawable = TextDrawable.builder()
                 .buildRoundRect(letter, color,100)
             itemView.Letter.setImageDrawable(drawable)
-            itemView.setOnClickListener { listener }
+            itemView.setOnClickListener { listener(item) }
         }
     }
 }
