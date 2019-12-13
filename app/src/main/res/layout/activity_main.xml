@@ -64,11 +64,26 @@
             android:textSize="36sp"
             android:textStyle="bold" />
         <View
+            android:id="@+id/roundBg"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_below="@id/view"
             android:layout_marginTop="-30dp"
-            android:background="@drawable/gradient_bg"/>
+            android:background="@drawable/rounded_bg"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@id/roundBg"
+            android:layout_margin="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:text="Selamat Datang,"
+            android:textColor="#000"
+            android:textSize="24sp"
+            android:textStyle="bold" />
         <androidx.cardview.widget.CardView
             android:id="@+id/menu1"
             android:layout_width="match_parent"
