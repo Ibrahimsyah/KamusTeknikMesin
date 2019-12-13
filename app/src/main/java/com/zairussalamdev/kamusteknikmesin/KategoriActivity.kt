@@ -2,6 +2,7 @@ package com.zairussalamdev.kamusteknikmesin
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
@@ -35,7 +36,7 @@ class KategoriActivity : AppCompatActivity() {
         rvKategori.layoutManager = LinearLayoutManager(this)
         rvKategori.setHasFixedSize(true)
         rvKategori.adapter = KategoriAdapter(this, items){
-            toast(it.name)
+            Log.d("Materi", it.id_kategori.toString())
             startActivity<MateriActivity>("id_kategori" to it.id_kategori)
         }
     }
