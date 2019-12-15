@@ -5,9 +5,18 @@ import kotlinx.android.parcel.Parcelize
 
 @Parcelize
 data class Materi(
-    val content : String,
-    val id_kategori: String,
-    val title : String
+    val id_materi : Int?,
+    val id_kategori: Int?,
+    val title : String?,
+    val content : String?
 ) : Parcelable{
-    constructor() : this("", "", "")
+    constructor() : this(0,0, "", "")
+
+    companion object{
+        val TABLE_MATERI = "TABLE_MATERI"
+        val ID_MATERI = "ID_MATERI"
+        val CONTENT = "CONTENT"
+        val ID_KATEGORI = "ID_KATEGORI"
+        val TITLE = "TITLE"
+    }
 }

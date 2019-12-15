@@ -28,7 +28,7 @@ class MateriAdapter (
     class MateriViewHolder(view : View) : RecyclerView.ViewHolder(view){
         fun bindItem(item: Materi, listener: (Materi) -> Unit){
             itemView.tvContent.text = item.title
-            val letter = item.title.substring(0,1)
+            val letter = item.title?.substring(0,1)
             val color = ColorGenerator.MATERIAL.randomColor
             val drawable = TextDrawable.builder()
                 .buildRoundRect(letter, color,100)

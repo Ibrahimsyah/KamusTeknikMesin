@@ -9,8 +9,11 @@ import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import com.zairussalamdev.kamusteknikmesin.adapter.KategoriAdapter
+import com.zairussalamdev.kamusteknikmesin.db.db
 import com.zairussalamdev.kamusteknikmesin.model.Kategori
 import kotlinx.android.synthetic.main.activity_kategori.*
+import org.jetbrains.anko.db.classParser
+import org.jetbrains.anko.db.select
 import org.jetbrains.anko.startActivity
 import org.jetbrains.anko.toast
 
@@ -20,19 +23,11 @@ class KategoriActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_kategori)
 
-        val items : MutableList<Kategori> = mutableListOf()
-        val database = FirebaseDatabase.getInstance()
-        val ref = database.getReference("/kategori")
-        ref.addValueEventListener(object : ValueEventListener {
-            override fun onCancelled(p0: DatabaseError) {}
-
-            override fun onDataChange(p0: DataSnapshot) {
-                for(h  in p0.children){
-                    val item = h.getValue(Kategori::class.java)
-                    item?.let { items.add(item) }
-                }
-            }
-        })
+        var items : List<Kategori> = mutableListOf()
+        db.use{
+            val res = select(Kategori.TABLE_KATEGORI)
+            items = res.parseList(classParser())
+        }
         rvKategori.layoutManager = LinearLayoutManager(this)
         rvKategori.setHasFixedSize(true)
         rvKategori.adapter = KategoriAdapter(this, items){

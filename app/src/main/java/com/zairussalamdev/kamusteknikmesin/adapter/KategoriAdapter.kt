@@ -29,7 +29,7 @@ class KategoriAdapter(
     class KategoriViewHolder(view: View) : RecyclerView.ViewHolder(view){
         fun bindItem(item: Kategori, listener: (Kategori)-> Unit) {
             itemView.tvContent.text = item.name
-            val letter = item.name.substring(0,1)
+            val letter = item.name?.substring(0,1)
             val color = ColorGenerator.MATERIAL.randomColor
             val drawable = TextDrawable.builder()
                 .buildRoundRect(letter, color,100)
