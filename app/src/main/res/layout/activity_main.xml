@@ -7,160 +7,169 @@
     android:background="@color/bgDark"
     tools:context=".MainActivity">
 
-    <RelativeLayout
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:fillViewport="true">
 
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="wrap_content"
-            android:layout_height="350dp"
-            android:scaleType="centerCrop"
-            app:srcCompat="@drawable/bg" />
-
-        <View
-            android:id="@+id/view"
-            android:layout_width="wrap_content"
-            android:layout_height="350dp"
-            android:background="#B0B91C1C" />
-
-        <LinearLayout
-            android:id="@+id/search"
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/judul"
-            android:layout_marginLeft="32dp"
-            android:layout_marginTop="32dp"
-            android:layout_marginRight="32dp"
-            android:background="@drawable/round_bg"
-            android:padding="8dp">
-
-            <TextView
-                android:id="@+id/tvSearch"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginLeft="16dp"
-                android:layout_weight="1"
-                android:gravity="center_vertical"
-                android:text="Cari disini" />
+            android:layout_height="wrap_content">
 
             <ImageView
-                android:id="@+id/imageView2"
+                android:id="@+id/imageView"
+                android:layout_width="wrap_content"
+                android:layout_height="350dp"
+                android:scaleType="centerCrop"
+                app:srcCompat="@drawable/bg" />
+
+            <View
+                android:id="@+id/view"
+                android:layout_width="wrap_content"
+                android:layout_height="350dp"
+                android:background="#B0B91C1C" />
+
+            <LinearLayout
+                android:id="@+id/search"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_toRightOf="@id/tvSearch"
-                android:layout_weight="9"
-                app:srcCompat="@drawable/ic_search_black_24dp" />
-        </LinearLayout>
-
-        <TextView
-            android:id="@+id/judul"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="100dp"
-            android:gravity="center_horizontal|center_vertical"
-            android:text="@string/app_name"
-            android:textColor="@android:color/white"
-            android:textSize="36sp"
-            android:textStyle="bold" />
-        <View
-            android:id="@+id/roundBg"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_below="@id/view"
-            android:layout_marginTop="-30dp"
-            android:background="@drawable/rounded_bg"/>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignTop="@id/roundBg"
-            android:layout_margin="16dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginBottom="16dp"
-            android:text="Selamat Datang,"
-            android:textColor="#000"
-            android:textSize="24sp"
-            android:textStyle="bold" />
-        <androidx.cardview.widget.CardView
-            android:id="@+id/menu1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_above="@id/menu2"
-            android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp"
-            android:layout_marginBottom="50dp"
-            app:cardBackgroundColor="@color/colorPrimary"
-            app:cardCornerRadius="30dp">
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:padding="16dp">
-
-                <ImageView
-                    android:id="@+id/img_kategori"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    app:srcCompat="@drawable/ic_view_list" />
+                android:layout_below="@id/judul"
+                android:layout_marginLeft="32dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginRight="32dp"
+                android:background="@drawable/round_bg"
+                android:padding="8dp">
 
                 <TextView
-                    android:id="@+id/textView3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="50dp"
-                    android:layout_toRightOf="@id/img_kategori"
-                    android:gravity="center"
-                    android:paddingLeft="16dp"
-                    android:text="Kategori"
-                    android:textAlignment="center"
-                    android:textColor="@android:color/white"
-                    android:textSize="24sp"
-                    android:textStyle="bold" />
-
-            </RelativeLayout>
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/menu2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp"
-            android:layout_marginBottom="50dp"
-            app:cardBackgroundColor="@color/colorPrimary"
-            app:cardCornerRadius="30dp">
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:padding="16dp">
+                    android:id="@+id/tvSearch"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="16dp"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:text="Cari disini" />
 
                 <ImageView
-                    android:id="@+id/img_rumus"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    app:srcCompat="@drawable/ic_function" />
+                    android:id="@+id/imageView2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/tvSearch"
+                    android:layout_weight="9"
+                    app:srcCompat="@drawable/ic_search_black_24dp" />
+            </LinearLayout>
 
-                <TextView
-                    android:id="@+id/textViewrumus"
-                    android:layout_width="wrap_content"
-                    android:layout_height="50dp"
-                    android:layout_toRightOf="@id/img_rumus"
-                    android:gravity="center"
-                    android:paddingLeft="16dp"
-                    android:text="Rumus"
-                    android:textAlignment="center"
-                    android:textColor="@android:color/white"
-                    android:textSize="24sp"
-                    android:textStyle="bold" />
+            <TextView
+                android:id="@+id/judul"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="100dp"
+                android:gravity="center_horizontal|center_vertical"
+                android:text="@string/app_name"
+                android:textColor="@android:color/white"
+                android:textSize="36sp"
+                android:textStyle="bold" />
 
-            </RelativeLayout>
-        </androidx.cardview.widget.CardView>
+            <View
+                android:id="@+id/roundBg"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/view"
+                android:layout_marginTop="-30dp"
+                android:background="@drawable/rounded_bg" />
 
-    </RelativeLayout>
+            <TextView
+                android:id="@+id/selamatDatang"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@id/roundBg"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="16dp"
+                android:text="Selamat Datang,"
+                android:textColor="#000"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/menu1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/selamatDatang"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginBottom="20dp"
+                app:cardBackgroundColor="@color/colorPrimary"
+                app:cardCornerRadius="30dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="16dp">
+
+                    <ImageView
+                        android:id="@+id/img_kategori"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        app:srcCompat="@drawable/ic_view_list" />
+
+                    <TextView
+                        android:id="@+id/textView3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="50dp"
+                        android:layout_toRightOf="@id/img_kategori"
+                        android:gravity="center"
+                        android:paddingLeft="16dp"
+                        android:text="Kategori"
+                        android:textAlignment="center"
+                        android:textColor="@android:color/white"
+                        android:textSize="24sp"
+                        android:textStyle="bold" />
+
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/menu2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/menu1"
+                android:layout_alignParentBottom="false"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginBottom="50dp"
+                app:cardBackgroundColor="@color/colorPrimary"
+                app:cardCornerRadius="30dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="16dp">
+
+                    <ImageView
+                        android:id="@+id/img_rumus"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        app:srcCompat="@drawable/ic_function" />
+
+                    <TextView
+                        android:id="@+id/textViewrumus"
+                        android:layout_width="wrap_content"
+                        android:layout_height="50dp"
+                        android:layout_toRightOf="@id/img_rumus"
+                        android:gravity="center"
+                        android:paddingLeft="16dp"
+                        android:text="Rumus"
+                        android:textAlignment="center"
+                        android:textColor="@android:color/white"
+                        android:textSize="24sp"
+                        android:textStyle="bold" />
+
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+        </RelativeLayout>
+    </androidx.core.widget.NestedScrollView>
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
