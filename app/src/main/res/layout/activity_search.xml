@@ -22,10 +22,8 @@
             android:layout_gravity="center_horizontal"
             android:theme="@style/AlertDialog.AppCompat.Light"
             app:iconifiedByDefault="false"
-            app:queryHint="Cari Sesuatu"
+            app:queryHint="Cari Materi / Kategori"
             app:searchIcon="@null">
-
-            <requestFocus />
         </androidx.appcompat.widget.SearchView>
     </androidx.appcompat.widget.Toolbar>
 

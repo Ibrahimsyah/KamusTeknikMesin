@@ -14,6 +14,7 @@ import com.zairussalamdev.kamusteknikmesin.model.Materi
 import kotlinx.android.synthetic.main.activity_materi.*
 import org.jetbrains.anko.db.classParser
 import org.jetbrains.anko.db.select
+import org.jetbrains.anko.startActivity
 
 class MateriActivity : AppCompatActivity() {
 
@@ -29,6 +30,8 @@ class MateriActivity : AppCompatActivity() {
         }
         rvMateri.layoutManager = LinearLayoutManager(this)
         rvMateri.setHasFixedSize(true)
-        rvMateri.adapter = MateriAdapter(this, items){}
+        rvMateri.adapter = MateriAdapter(this, items){
+            startActivity<DetailActivity>("id_materi" to it.id_materi)
+        }
     }
 }
