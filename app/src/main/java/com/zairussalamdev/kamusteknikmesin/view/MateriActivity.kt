@@ -1,13 +1,9 @@
-package com.zairussalamdev.kamusteknikmesin
+package com.zairussalamdev.kamusteknikmesin.view
 
 import android.os.Bundle
-import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.google.firebase.database.DataSnapshot
-import com.google.firebase.database.DatabaseError
-import com.google.firebase.database.FirebaseDatabase
-import com.google.firebase.database.ValueEventListener
+import com.zairussalamdev.kamusteknikmesin.R
 import com.zairussalamdev.kamusteknikmesin.adapter.MateriAdapter
 import com.zairussalamdev.kamusteknikmesin.db.db
 import com.zairussalamdev.kamusteknikmesin.model.Materi

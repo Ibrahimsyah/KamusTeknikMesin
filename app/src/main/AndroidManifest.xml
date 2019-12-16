@@ -11,19 +11,19 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".DetailActivity"></activity>
-        <activity android:name=".SplashScreen">
+        <activity android:name=".view.DetailActivity"></activity>
+        <activity android:name=".view.SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MateriActivity" />
-        <activity android:name=".KategoriActivity" />
-        <activity android:name=".SearchActivity" />
+        <activity android:name=".view.MateriActivity" />
+        <activity android:name=".view.KategoriActivity" />
+        <activity android:name=".view.SearchActivity" />
         <activity
-            android:name=".MainActivity"
+            android:name=".view.MainActivity"
             android:screenOrientation="portrait"></activity>
     </application>
 

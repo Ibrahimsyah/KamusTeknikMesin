@@ -1,4 +1,4 @@
-package com.zairussalamdev.kamusteknikmesin
+package com.zairussalamdev.kamusteknikmesin.view
 
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
@@ -8,7 +8,7 @@ import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
-import com.zairussalamdev.kamusteknikmesin.model.Kategori
+import com.zairussalamdev.kamusteknikmesin.R
 import kotlinx.android.synthetic.main.activity_main.*
 import org.jetbrains.anko.sdk27.coroutines.onClick
 import org.jetbrains.anko.startActivity

@@ -1,18 +1,10 @@
-package com.zairussalamdev.kamusteknikmesin
+package com.zairussalamdev.kamusteknikmesin.view
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.google.firebase.database.DataSnapshot
-import com.google.firebase.database.DatabaseError
-import com.google.firebase.database.FirebaseDatabase
-import com.google.firebase.database.ValueEventListener
-import com.zairussalamdev.kamusteknikmesin.db.db
-import com.zairussalamdev.kamusteknikmesin.model.Kategori
-import com.zairussalamdev.kamusteknikmesin.model.Materi
+import com.zairussalamdev.kamusteknikmesin.R
 import com.zairussalamdev.kamusteknikmesin.presenter.SplashPresenter
 import com.zairussalamdev.kamusteknikmesin.presenter.SplashView
-import org.jetbrains.anko.db.insert
-import org.jetbrains.anko.doAsync
 import org.jetbrains.anko.startActivity
 
 class SplashScreen : AppCompatActivity(), SplashView {

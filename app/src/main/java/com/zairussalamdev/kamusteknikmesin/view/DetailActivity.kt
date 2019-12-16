@@ -1,8 +1,9 @@
-package com.zairussalamdev.kamusteknikmesin
+package com.zairussalamdev.kamusteknikmesin.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
+import com.zairussalamdev.kamusteknikmesin.R
 import com.zairussalamdev.kamusteknikmesin.db.db
 import com.zairussalamdev.kamusteknikmesin.model.Materi
 import kotlinx.android.synthetic.main.activity_detail.*
