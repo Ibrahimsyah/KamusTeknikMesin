@@ -23,6 +23,7 @@ class DetailActivity : AppCompatActivity() {
             materi = res.parseSingle(classParser())
         }
         contentToolbar.title = materi.title
+        content.text = materi.content
         setSupportActionBar(contentToolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
     }

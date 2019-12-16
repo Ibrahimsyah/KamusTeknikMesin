@@ -44,16 +44,15 @@
                     android:id="@+id/tvSearch"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginLeft="16dp"
+                    android:layout_marginStart="16dp"
                     android:layout_weight="1"
                     android:gravity="center_vertical"
-                    android:text="Cari disini" />
+                    android:text="@string/cari_disini" />
 
                 <ImageView
                     android:id="@+id/imageView2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_toRightOf="@id/tvSearch"
                     android:layout_weight="9"
                     app:srcCompat="@drawable/ic_search_black_24dp" />
             </LinearLayout>
@@ -111,16 +110,17 @@
                         android:id="@+id/img_kategori"
                         android:layout_width="50dp"
                         android:layout_height="50dp"
+                        android:contentDescription="Text Drawable"
                         app:srcCompat="@drawable/ic_view_list" />
 
                     <TextView
                         android:id="@+id/textView3"
                         android:layout_width="wrap_content"
                         android:layout_height="50dp"
-                        android:layout_toRightOf="@id/img_kategori"
+                        android:layout_toEndOf="@id/img_kategori"
                         android:gravity="center"
-                        android:paddingLeft="16dp"
-                        android:text="Kategori"
+                        android:paddingStart="16dp"
+                        android:text="@string/kategori"
                         android:textAlignment="center"
                         android:textColor="@android:color/white"
                         android:textSize="24sp"
