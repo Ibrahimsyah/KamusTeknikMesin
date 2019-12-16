@@ -1,8 +1,8 @@
 package com.zairussalamdev.kamusteknikmesin.view
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
+import androidx.appcompat.app.AppCompatActivity
 import com.zairussalamdev.kamusteknikmesin.R
 import com.zairussalamdev.kamusteknikmesin.db.db
 import com.zairussalamdev.kamusteknikmesin.model.Materi
@@ -17,9 +17,9 @@ class DetailActivity : AppCompatActivity() {
         setContentView(R.layout.activity_detail)
 
         val id_materi = intent.getIntExtra("id_materi", 0)
-        var materi = Materi(0,0,"Default Materi","")
+        var materi = Materi(0, 0, "Default Materi", "")
         db.use {
-            val res =select(Materi.TABLE_MATERI).whereArgs("id_materi = $id_materi")
+            val res = select(Materi.TABLE_MATERI).whereArgs("id_materi = $id_materi")
             materi = res.parseSingle(classParser())
         }
         contentToolbar.title = materi.title
@@ -28,7 +28,7 @@ class DetailActivity : AppCompatActivity() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        if(item.itemId == android.R.id.home)super.onBackPressed()
+        if (item.itemId == android.R.id.home) super.onBackPressed()
         return super.onOptionsItemSelected(item)
     }
 }

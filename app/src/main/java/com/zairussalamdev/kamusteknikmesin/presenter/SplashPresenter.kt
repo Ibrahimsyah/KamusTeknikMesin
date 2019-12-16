@@ -5,6 +5,7 @@ import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
+import com.zairussalamdev.kamusteknikmesin.R
 import com.zairussalamdev.kamusteknikmesin.db.db
 import com.zairussalamdev.kamusteknikmesin.model.Kategori
 import com.zairussalamdev.kamusteknikmesin.model.Materi
@@ -19,48 +20,70 @@ class SplashPresenter(
     fun queryData() {
         splashView.showLoader()
         doAsync {
+            val pref = context.getSharedPreferences(
+                context.getString(R.string.dataKey),
+                Context.MODE_PRIVATE
+            )
+            val key = pref.getString(context.getString(R.string.dataKey), "null")
+            var dbKey = ""
             val database = FirebaseDatabase.getInstance()
-            var ref = database.getReference("/kategori")
+            var ref = database.getReference("/dataKey")
             ref.addValueEventListener(object : ValueEventListener {
                 override fun onCancelled(p0: DatabaseError) {}
 
                 override fun onDataChange(p0: DataSnapshot) {
-                    for (h in p0.children) {
-                        val item = h.getValue(Kategori::class.java)
-                        item?.let {
-                            context.db.use {
-                                insert(
-                                    Kategori.TABLE_KATEGORI,
-                                    Kategori.ID_KATEGORI to item.id_kategori,
-                                    Kategori.NAME to item.name
-                                )
-                            }
-                        }
-                    }
-                }
-            })
-            ref = database.getReference("/materi")
-            ref.addValueEventListener(object : ValueEventListener {
-                override fun onCancelled(p0: DatabaseError) {
+                    dbKey = p0.value.toString()
                 }
 
-                override fun onDataChange(p0: DataSnapshot) {
-                    for (h in p0.children) {
-                        val item = h.getValue(Materi::class.java)
-                        item?.let {
-                            context.db.use {
-                                insert(
-                                    Materi.TABLE_MATERI,
-                                    Materi.ID_MATERI to item.id_materi,
-                                    Materi.ID_KATEGORI to item.id_kategori,
-                                    Materi.TITLE to item.title,
-                                    Materi.CONTENT to item.content
-                                )
+            })
+            if (!key.equals(dbKey)) {
+                ref = database.getReference("/kategori")
+                ref.addValueEventListener(object : ValueEventListener {
+                    override fun onCancelled(p0: DatabaseError) {}
+
+                    override fun onDataChange(p0: DataSnapshot) {
+                        for (h in p0.children) {
+                            val item = h.getValue(Kategori::class.java)
+                            item?.let {
+                                context.db.use {
+                                    insert(
+                                        Kategori.TABLE_KATEGORI,
+                                        Kategori.ID_KATEGORI to item.id_kategori,
+                                        Kategori.NAME to item.name
+                                    )
+                                }
                             }
                         }
                     }
+                })
+                ref = database.getReference("/materi")
+                ref.addValueEventListener(object : ValueEventListener {
+                    override fun onCancelled(p0: DatabaseError) {
+                    }
+
+                    override fun onDataChange(p0: DataSnapshot) {
+                        for (h in p0.children) {
+                            val item = h.getValue(Materi::class.java)
+                            item?.let {
+                                context.db.use {
+                                    insert(
+                                        Materi.TABLE_MATERI,
+                                        Materi.ID_MATERI to item.id_materi,
+                                        Materi.ID_KATEGORI to item.id_kategori,
+                                        Materi.TITLE to item.title,
+                                        Materi.CONTENT to item.content
+                                    )
+                                }
+                            }
+                        }
+                    }
+                })
+
+                with(pref.edit()) {
+                    putString(context.getString(R.string.dataKey), dbKey)
+                    commit()
                 }
-            })
+            }
             uiThread { splashView.hideLoader() }
         }
     }

@@ -1,9 +1,9 @@
 package com.zairussalamdev.kamusteknikmesin.view
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.MenuItem
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.zairussalamdev.kamusteknikmesin.R
 import com.zairussalamdev.kamusteknikmesin.adapter.KategoriAdapter
@@ -24,21 +24,21 @@ class SearchActivity : AppCompatActivity() {
         supportActionBar?.setDisplayShowHomeEnabled(true)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
-        var items : List<Kategori> = mutableListOf()
-        db.use{
+        var items: List<Kategori> = mutableListOf()
+        db.use {
             val res = select(Kategori.TABLE_KATEGORI)
             items = res.parseList(classParser())
         }
         rvSearch.layoutManager = LinearLayoutManager(this)
         rvSearch.setHasFixedSize(true)
-        rvSearch.adapter = KategoriAdapter(this, items){
+        rvSearch.adapter = KategoriAdapter(this, items) {
             Log.d("Materi", it.id_kategori.toString())
             startActivity<MateriActivity>("id_kategori" to it.id_kategori)
         }
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        if(item.itemId == android.R.id.home)super.onBackPressed()
+        if (item.itemId == android.R.id.home) super.onBackPressed()
         return super.onOptionsItemSelected(item)
     }
 }

@@ -41,5 +41,5 @@ class DbHelper(ctx: Context) : ManagedSQLiteOpenHelper(ctx, "DBKamus", null, 1) 
     }
 }
 
-val Context.db : DbHelper
+val Context.db: DbHelper
     get() = DbHelper.getInstance(applicationContext)

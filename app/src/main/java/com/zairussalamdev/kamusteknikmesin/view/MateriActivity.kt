@@ -19,14 +19,14 @@ class MateriActivity : AppCompatActivity() {
         setContentView(R.layout.activity_materi)
 
         val id_kategori = intent.getIntExtra("id_kategori", 0)
-        var items : List<Materi> = mutableListOf()
-        db.use{
+        var items: List<Materi> = mutableListOf()
+        db.use {
             val res = select(Materi.TABLE_MATERI).whereArgs("${Materi.ID_KATEGORI} = $id_kategori")
             items = res.parseList(classParser())
         }
         rvMateri.layoutManager = LinearLayoutManager(this)
         rvMateri.setHasFixedSize(true)
-        rvMateri.adapter = MateriAdapter(this, items){
+        rvMateri.adapter = MateriAdapter(this, items) {
             startActivity<DetailActivity>("id_materi" to it.id_materi)
         }
     }
