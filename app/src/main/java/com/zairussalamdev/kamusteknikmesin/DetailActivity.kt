@@ -18,7 +18,7 @@ class DetailActivity : AppCompatActivity() {
         val id_materi = intent.getIntExtra("id_materi", 0)
         var materi = Materi(0,0,"Default Materi","")
         db.use {
-            val res =select(Materi.TABLE_MATERI).whereArgs("id_materi = ${id_materi}")
+            val res =select(Materi.TABLE_MATERI).whereArgs("id_materi = $id_materi")
             materi = res.parseSingle(classParser())
         }
         contentToolbar.title = materi.title
