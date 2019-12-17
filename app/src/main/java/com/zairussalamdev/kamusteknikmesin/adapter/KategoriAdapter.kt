@@ -4,7 +4,6 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.view.animation.AnimationUtils
 import androidx.recyclerview.widget.RecyclerView
 import com.amulyakhare.textdrawable.TextDrawable
 import com.amulyakhare.textdrawable.util.ColorGenerator
@@ -25,9 +24,6 @@ class KategoriAdapter(
 
     override fun onBindViewHolder(holder: KategoriViewHolder, position: Int) {
         holder.bindItem(items[position], listener)
-
-        val anim = AnimationUtils.loadAnimation(context, android.R.anim.slide_in_left)
-        holder.itemView.startAnimation(anim)
     }
 
     class KategoriViewHolder(view: View) : RecyclerView.ViewHolder(view) {

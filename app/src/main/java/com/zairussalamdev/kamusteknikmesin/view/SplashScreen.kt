@@ -12,6 +12,7 @@ class SplashScreen : AppCompatActivity(), SplashView {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.splash_screen)
+        this.overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
 
         val presenter = SplashPresenter(this, applicationContext)
         presenter.queryData()
