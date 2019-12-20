@@ -14,9 +14,14 @@ data class Materi(
 
     companion object {
         val TABLE_MATERI = "TABLE_MATERI"
+        val TABLE_FAV = "TABLE_FAV"
         val ID_MATERI = "ID_MATERI"
         val CONTENT = "CONTENT"
         val ID_KATEGORI = "ID_KATEGORI"
         val TITLE = "TITLE"
     }
 }
+
+data class FavMateri(
+    val id_materi: Int?
+)

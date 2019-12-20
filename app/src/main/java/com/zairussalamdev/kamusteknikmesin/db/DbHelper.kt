@@ -32,11 +32,16 @@ class DbHelper(ctx: Context) : ManagedSQLiteOpenHelper(ctx, "DBKamus", null, 1) 
             Materi.TITLE to TEXT,
             Materi.CONTENT to TEXT
         )
+        db?.createTable(
+            Materi.TABLE_FAV, true,
+            Materi.ID_MATERI to INTEGER + PRIMARY_KEY
+        )
     }
 
     override fun onUpgrade(db: SQLiteDatabase?, p1: Int, p2: Int) {
         db?.dropTable(Kategori.TABLE_KATEGORI, true)
         db?.dropTable(Materi.TABLE_MATERI, true)
+        db?.dropTable(Materi.TABLE_FAV, true)
 
     }
 }
