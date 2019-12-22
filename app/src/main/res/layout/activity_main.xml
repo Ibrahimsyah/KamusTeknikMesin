@@ -9,7 +9,8 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:nestedScrollingEnabled="false">
 
         <ImageView
             android:id="@+id/imageView"
@@ -52,6 +53,15 @@
                 app:srcCompat="@drawable/ic_search_black_24dp" />
         </LinearLayout>
 
+        <View
+            android:id="@+id/roundBg"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/view"
+            android:layout_marginTop="-30dp"
+            android:background="@drawable/rounded_bg"
+            android:nestedScrollingEnabled="false" />
+
         <TextView
             android:id="@+id/judul"
             android:layout_width="match_parent"
@@ -63,14 +73,6 @@
             android:textSize="36sp"
             android:textStyle="bold" />
 
-        <View
-            android:id="@+id/roundBg"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_below="@id/view"
-            android:layout_marginTop="-30dp"
-            android:background="@drawable/rounded_bg" />
-
         <TextView
             android:id="@+id/selamatDatang"
             android:layout_width="match_parent"
@@ -80,7 +82,7 @@
             android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
             android:layout_marginBottom="16dp"
-            android:text="Selamat Datang,"
+            android:text="Materi Favorit"
             android:textColor="#000"
             android:textSize="24sp"
             android:textStyle="bold" />
@@ -88,7 +90,8 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/selamatDatang">
+            android:layout_below="@id/selamatDatang"
+            android:nestedScrollingEnabled="false">
 
             <ProgressBar
                 android:id="@+id/pbFav"
@@ -102,6 +105,7 @@
                 android:id="@+id/favRecycler"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:nestedScrollingEnabled="false"
                 android:paddingLeft="16dp"
                 android:paddingRight="16dp"
                 android:paddingBottom="16dp">

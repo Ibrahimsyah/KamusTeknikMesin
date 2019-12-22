@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Kamus Teknik Mesin</string>
     <string name="dataKey">Data Key</string>
-    <string name="cari_disini">Cari disini</string>
+    <string name="cari_disini">Cari atau Pilih Kategori Disini</string>
     <string name="kategori">Kategori</string>
     <string name="noResult">Tidak Menemukan Hasil</string>
 </resources>
