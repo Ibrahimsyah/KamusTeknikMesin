@@ -1,7 +1,6 @@
 package com.zairussalamdev.kamusteknikmesin.view
 
 import android.os.Bundle
-import android.util.Log
 import android.view.MenuItem
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
@@ -24,7 +23,6 @@ class KategoriActivity : AppCompatActivity(), KategoriView {
         pbKategori.visibility = View.GONE
         if (kategoriList.isNotEmpty()) {
             rvKategori.adapter = KategoriAdapter(this, kategoriList) {
-                Log.d("Materi", it.id_kategori.toString())
                 startActivity<MateriActivity>("kategori" to it)
             }
 
@@ -39,8 +37,10 @@ class KategoriActivity : AppCompatActivity(), KategoriView {
 
         setSupportActionBar(kategoriToolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
         val presenter = KategoriPresenter(this, this)
         presenter.getKategori()
+
         rvKategori.layoutManager = LinearLayoutManager(this)
         rvKategori.setHasFixedSize(true)
 

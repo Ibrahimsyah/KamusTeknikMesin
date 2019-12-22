@@ -13,8 +13,8 @@ import kotlinx.android.synthetic.main.item_rv.view.*
 
 class MateriAdapter(
     val context: Context,
-    val items: List<Materi>,
-    val listener: (Materi) -> Unit
+    private val items: List<Materi>,
+    private val listener: (Materi) -> Unit
 ) : RecyclerView.Adapter<MateriAdapter.MateriViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MateriViewHolder =
@@ -23,7 +23,7 @@ class MateriAdapter(
     override fun getItemCount(): Int = items.size
 
     override fun onBindViewHolder(holder: MateriViewHolder, position: Int) {
-        holder.bindItem(items.get(position), listener)
+        holder.bindItem(items[position], listener)
     }
 
     class MateriViewHolder(view: View) : RecyclerView.ViewHolder(view) {
