@@ -3,4 +3,5 @@
     <string name="dataKey">Data Key</string>
     <string name="cari_disini">Cari disini</string>
     <string name="kategori">Kategori</string>
+    <string name="noResult">Tidak Menemukan Hasil</string>
 </resources>

@@ -38,7 +38,7 @@ class SearchActivity : AppCompatActivity(), SearchViews {
         rvSearch.layoutManager = LinearLayoutManager(this)
         rvSearch.setHasFixedSize(true)
         rvSearch.adapter = KategoriAdapter(this, items) {
-            startActivity<MateriActivity>("id_kategori" to it.id_kategori)
+            startActivity<MateriActivity>("kategori" to it)
         }
         searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean = false
@@ -47,7 +47,7 @@ class SearchActivity : AppCompatActivity(), SearchViews {
                 if (newText != null) {
                     if (newText.isEmpty())
                         rvSearch.adapter = KategoriAdapter(applicationContext, items) {
-                            startActivity<MateriActivity>("id_kategori" to it.id_kategori)
+                            startActivity<MateriActivity>("kategori" to it)
                         }
                     else {
                         rvSearch.adapter = MateriAdapter(applicationContext, mutableListOf()) {}
