@@ -22,9 +22,8 @@
             android:layout_gravity="center_horizontal"
             android:theme="@style/AlertDialog.AppCompat.Light"
             app:iconifiedByDefault="false"
-            app:queryHint="Cari Materi / Kategori"
-            app:searchIcon="@null">
-        </androidx.appcompat.widget.SearchView>
+            app:queryHint="Cari Materi"
+            app:searchIcon="@null"></androidx.appcompat.widget.SearchView>
     </androidx.appcompat.widget.Toolbar>
 
     <androidx.recyclerview.widget.RecyclerView

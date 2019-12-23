@@ -28,7 +28,6 @@ class MainActivity : AppCompatActivity(), FavView {
 
         favRecycler.layoutManager = LinearLayoutManager(this)
         favRecycler.setHasFixedSize(true)
-
         presenter.getFav()
 
         search.onClick {
