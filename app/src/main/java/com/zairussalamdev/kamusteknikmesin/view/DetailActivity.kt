@@ -38,11 +38,12 @@ class DetailActivity : AppCompatActivity() {
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         content.text = materi.content
-
-        val storageReference = FirebaseStorage.getInstance().reference.child("Spotlight 9.jpg")
+        val imgPath = "Spotlight 9.jpg"
+        val storageReference = FirebaseStorage.getInstance().reference.child(imgPath)
         GlideApp.with(this)
             .load(storageReference)
             .into(contentImage)
+
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
@@ -74,4 +75,5 @@ class DetailActivity : AppCompatActivity() {
         if (isFav) menu?.getItem(0)?.setIcon(R.drawable.ic_favorite_active)
         return super.onCreateOptionsMenu(menu)
     }
+
 }
