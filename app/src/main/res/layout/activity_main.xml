@@ -82,7 +82,7 @@
             android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
             android:layout_marginBottom="16dp"
-            android:text="Materi Favorit"
+            android:text="@string/materi_favorit"
             android:textColor="#000"
             android:textSize="24sp"
             android:textStyle="bold" />
@@ -118,7 +118,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
-                android:text="Belum Ada Materi Favorit"
+                android:text="@string/no_fav"
                 android:visibility="gone" />
 
         </RelativeLayout>

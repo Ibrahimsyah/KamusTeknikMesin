@@ -9,4 +9,6 @@
     <string name="gambar_expanded">Gambar Expanded</string>
     <string name="Author">Dibuat oleh Zairussalam Lab</string>
     <string name="judul_materi">Judul Materi</string>
+    <string name="no_fav">Belum Ada Materi Favorit</string>
+    <string name="materi_favorit">Materi Favorit</string>
 </resources>

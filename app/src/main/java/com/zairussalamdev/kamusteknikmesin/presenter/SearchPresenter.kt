@@ -3,6 +3,7 @@ package com.zairussalamdev.kamusteknikmesin.presenter
 import android.content.Context
 import com.zairussalamdev.kamusteknikmesin.db.db
 import com.zairussalamdev.kamusteknikmesin.model.Materi
+import org.jetbrains.anko.db.SqlOrderDirection
 import org.jetbrains.anko.db.classParser
 import org.jetbrains.anko.db.select
 import org.jetbrains.anko.doAsync
@@ -18,6 +19,7 @@ class SearchPresenter(
         doAsync {
             context.db.use {
                 val res = select(Materi.TABLE_MATERI).whereArgs("${Materi.TITLE} like '%$query%'")
+                    .orderBy(Materi.TITLE, SqlOrderDirection.ASC)
                 lists = res.parseList(classParser())
             }
             uiThread {
