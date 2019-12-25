@@ -1,7 +1,6 @@
 package com.zairussalamdev.kamusteknikmesin.view
 
 import android.os.Bundle
-import android.text.TextUtils
 import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
@@ -34,8 +33,6 @@ class DetailActivity : AppCompatActivity() {
             res = select(Materi.TABLE_FAV).whereArgs("id_materi = $idMateri")
             isFav = res.parseList(classParser<FavMateri>()).isNotEmpty()
         }
-        contentTitle.ellipsize = TextUtils.TruncateAt.MARQUEE
-        contentTitle.marqueeRepeatLimit = -1
         contentTitle.isSelected = true
         contentTitle.text = materi.title
 
