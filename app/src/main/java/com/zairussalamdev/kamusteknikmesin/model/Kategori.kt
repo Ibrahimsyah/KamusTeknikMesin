@@ -11,8 +11,8 @@ data class Kategori(
     constructor() : this(0, "")
 
     companion object {
-        val TABLE_KATEGORI = "TABLE_KATEGORI"
-        val ID_KATEGORI = "ID_KATEGORI"
-        val NAME = "NAME"
+        const val TABLE_KATEGORI = "TABLE_KATEGORI"
+        const val ID_KATEGORI = "ID_KATEGORI"
+        const val NAME = "NAME"
     }
 }

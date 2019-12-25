@@ -72,7 +72,8 @@ class SplashPresenter(
                                                 Materi.ID_MATERI to item.id_materi,
                                                 Materi.ID_KATEGORI to item.id_kategori,
                                                 Materi.TITLE to item.title,
-                                                Materi.CONTENT to item.content
+                                                Materi.CONTENT to item.content,
+                                                Materi.IMG to item.img
                                             )
                                         }
                                     }

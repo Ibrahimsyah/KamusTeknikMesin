@@ -10,7 +10,7 @@ import org.jetbrains.anko.uiThread
 
 class SearchPresenter(
     val context: Context,
-    val searchViews: SearchViews
+    private val searchViews: SearchViews
 ) {
     fun findMateri(query: String) {
         searchViews.showLoader()

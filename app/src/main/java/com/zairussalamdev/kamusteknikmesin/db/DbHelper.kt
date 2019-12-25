@@ -30,7 +30,8 @@ class DbHelper(ctx: Context) : ManagedSQLiteOpenHelper(ctx, "DBKamus", null, 1) 
             Materi.ID_MATERI to INTEGER + PRIMARY_KEY,
             Materi.ID_KATEGORI to INTEGER,
             Materi.TITLE to TEXT,
-            Materi.CONTENT to TEXT
+            Materi.CONTENT to TEXT,
+            Materi.IMG to TEXT
         )
         db?.createTable(
             Materi.TABLE_FAV, true,

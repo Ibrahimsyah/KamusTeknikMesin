@@ -26,7 +26,7 @@ class DetailActivity : AppCompatActivity() {
         setContentView(R.layout.activity_detail)
 
         val idMateri = intent.getIntExtra("id_materi", 0)
-        materi = Materi(0, 0, "Default Materi", "")
+        materi = Materi(0, 0, "Default Materi", "", "")
         db.use {
             var res = select(Materi.TABLE_MATERI).whereArgs("id_materi = $idMateri")
             materi = res.parseSingle(classParser())
@@ -38,11 +38,15 @@ class DetailActivity : AppCompatActivity() {
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         content.text = materi.content
-        val imgPath = "Spotlight 9.jpg"
-        val storageReference = FirebaseStorage.getInstance().reference.child(imgPath)
-        GlideApp.with(this)
-            .load(storageReference)
-            .into(contentImage)
+        val imgPath = materi.img
+        if (imgPath != null) {
+            if (imgPath.isNotEmpty()) {
+                val storageReference = FirebaseStorage.getInstance().reference.child(imgPath)
+                GlideApp.with(this)
+                    .load(storageReference)
+                    .into(contentImage)
+            }
+        }
 
     }
 

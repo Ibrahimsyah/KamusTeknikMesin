@@ -44,6 +44,7 @@ class SearchActivity : AppCompatActivity(), SearchViews {
             override fun onQueryTextSubmit(query: String?): Boolean = false
 
             override fun onQueryTextChange(newText: String?): Boolean {
+                setDefault()
                 if (newText != null) {
                     if (newText.isEmpty())
                         rvSearch.adapter = KategoriAdapter(applicationContext, items) {
@@ -57,6 +58,11 @@ class SearchActivity : AppCompatActivity(), SearchViews {
                 return false
             }
         })
+    }
+
+    fun setDefault() {
+        searchNoResult.visibility = View.GONE
+        pbSearch.visibility = View.GONE
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {

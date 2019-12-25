@@ -18,7 +18,7 @@ class FavPresenter(
         doAsync {
             context.db.use {
                 val query =
-                    "select f.id_materi, id_kategori, title, content from ${Materi.TABLE_FAV} f inner join ${Materi.TABLE_MATERI} m on f.id_materi = m.id_materi"
+                    "select f.id_materi, id_kategori, title, content, img from ${Materi.TABLE_FAV} f inner join ${Materi.TABLE_MATERI} m on f.id_materi = m.id_materi"
                 val res = rawQuery(
                     query,
                     null

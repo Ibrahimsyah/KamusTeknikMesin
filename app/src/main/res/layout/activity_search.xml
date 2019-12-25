@@ -23,7 +23,7 @@
             android:theme="@style/AlertDialog.AppCompat.Light"
             app:iconifiedByDefault="false"
             app:queryHint="Cari Materi"
-            app:searchIcon="@null"></androidx.appcompat.widget.SearchView>
+            app:searchIcon="@null" />
     </androidx.appcompat.widget.Toolbar>
 
     <androidx.recyclerview.widget.RecyclerView
