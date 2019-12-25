@@ -3,6 +3,7 @@ package com.zairussalamdev.kamusteknikmesin.presenter
 import android.content.Context
 import com.zairussalamdev.kamusteknikmesin.db.db
 import com.zairussalamdev.kamusteknikmesin.model.Materi
+import org.jetbrains.anko.db.SqlOrderDirection
 import org.jetbrains.anko.db.classParser
 import org.jetbrains.anko.db.select
 import org.jetbrains.anko.doAsync
@@ -19,6 +20,7 @@ class MateriPresenter(
             context.db.use {
                 val res =
                     select(Materi.TABLE_MATERI).whereArgs("${Materi.ID_KATEGORI} = $id")
+                        .orderBy(Materi.TITLE, SqlOrderDirection.ASC)
                 items = res.parseList(classParser())
             }
             uiThread {

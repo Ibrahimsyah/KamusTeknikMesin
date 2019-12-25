@@ -3,6 +3,7 @@ package com.zairussalamdev.kamusteknikmesin.presenter
 import android.content.Context
 import com.zairussalamdev.kamusteknikmesin.db.db
 import com.zairussalamdev.kamusteknikmesin.model.Kategori
+import org.jetbrains.anko.db.SqlOrderDirection
 import org.jetbrains.anko.db.classParser
 import org.jetbrains.anko.db.select
 import org.jetbrains.anko.doAsync
@@ -17,7 +18,8 @@ class KategoriPresenter(
         doAsync {
             var items: List<Kategori> = mutableListOf()
             context.db.use {
-                val res = select(Kategori.TABLE_KATEGORI)
+                val res =
+                    select(Kategori.TABLE_KATEGORI).orderBy(Kategori.NAME, SqlOrderDirection.ASC)
                 items = res.parseList(classParser())
             }
             uiThread {
