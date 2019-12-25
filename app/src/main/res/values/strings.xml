@@ -4,4 +4,6 @@
     <string name="cari_disini">Cari atau Pilih Kategori Disini</string>
     <string name="kategori">Kategori</string>
     <string name="noResult">Tidak Menemukan Hasil</string>
+    <string name="gambar_konten">Gambar Konten</string>
+    <string name="definisi">Definisi</string>
 </resources>

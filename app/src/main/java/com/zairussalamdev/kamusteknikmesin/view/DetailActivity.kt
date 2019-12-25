@@ -4,6 +4,8 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
+import com.google.firebase.storage.FirebaseStorage
+import com.zairussalamdev.kamusteknikmesin.GlideApp
 import com.zairussalamdev.kamusteknikmesin.R
 import com.zairussalamdev.kamusteknikmesin.db.db
 import com.zairussalamdev.kamusteknikmesin.model.FavMateri
@@ -32,9 +34,15 @@ class DetailActivity : AppCompatActivity() {
             isFav = res.parseList(classParser<FavMateri>()).isNotEmpty()
         }
         contentToolbar.title = materi.title
-        content.text = materi.content
         setSupportActionBar(contentToolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
+        content.text = materi.content
+
+        val storageReference = FirebaseStorage.getInstance().reference.child("Spotlight 9.jpg")
+        GlideApp.with(this)
+            .load(storageReference)
+            .into(contentImage)
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
